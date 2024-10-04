@@ -1,7 +1,6 @@
 //  Html Değişkenleri
 
 const btns = document.querySelectorAll("button");
-const menuList = document.querySelector(".menu-list");
 const productWrapper = document.querySelector(".product-wrapper");
 
 // Apiden gelen datayı dışarıda kullanmak için tanımladığımız değişken
@@ -30,6 +29,7 @@ const getApi = async () => {
     return data;
   } catch (error) {
     // try bloğu çalışmazsa bu blok çalışacak.
+    const menuList = document.querySelector(".menu-list");
 
     // 404 hatasını ekrana getiren kod.
     menuList.innerHTML = `<img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
@@ -56,6 +56,7 @@ window.addEventListener("DOMContentLoaded", async function (e) {
     setTimeout(() => {
       displayData(data.menu);
     }, 1000);
+    const menuList = document.querySelector(".menu-list");
 
     menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
   } else {
@@ -112,6 +113,8 @@ for (const btn of btns) {
 // Dataları ekrana yazdıran fonksiyon
 
 const displayData = (data) => {
+  const menuList = document.querySelector(".menu-list");
+
   menuList.innerHTML = "";
   for (const item of data) {
     const itemDiv = createItem(
