@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", async function (e) {
   // e.target.location.pathname ile sayfanın hangi sayfada olduğunu öğreniyoruz.
 
   const pathname = e.target.location.pathname;
-  console.log(pathname);
+  // console.log(pathname);
   // eğer sayfa index.html de ise if bloğu, değilse else bloğu çalışacak.
 
   if (pathname == "/index.html" || "/") {
