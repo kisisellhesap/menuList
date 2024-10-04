@@ -1,7 +1,9 @@
 //  Html Değişkenleri
 
 const btns = document.querySelectorAll("button");
+const menuList = document.querySelector(".menu-list");
 const productWrapper = document.querySelector(".product-wrapper");
+const productPathTitle = document.querySelector(".path-title");
 
 // Apiden gelen datayı dışarıda kullanmak için tanımladığımız değişken
 
@@ -29,7 +31,6 @@ const getApi = async () => {
     return data;
   } catch (error) {
     // try bloğu çalışmazsa bu blok çalışacak.
-    const menuList = document.querySelector(".menu-list");
 
     // 404 hatasını ekrana getiren kod.
     menuList.innerHTML = `<img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
@@ -47,16 +48,14 @@ window.addEventListener("DOMContentLoaded", async function (e) {
   // e.target.location.pathname ile sayfanın hangi sayfada olduğunu öğreniyoruz.
 
   const pathname = e.target.location.pathname;
-  // console.log(pathname);
+
   // eğer sayfa index.html de ise if bloğu, değilse else bloğu çalışacak.
 
-  if (pathname == "/index.html" || "/") {
+  if (pathname == "/index.html" || pathname == "/") {
     // tüm dataları ekrana yazdıran fonksiyon
-
     setTimeout(() => {
       displayData(data.menu);
     }, 1000);
-    const menuList = document.querySelector(".menu-list");
 
     menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
   } else {
@@ -67,8 +66,6 @@ window.addEventListener("DOMContentLoaded", async function (e) {
       const id = params.get("id");
       displayProduct(id, data.menu);
     } catch (error) {
-      const productPathTitle = document.querySelector(".path-title");
-
       // herhangi bir error durumunda sayfanın contentini güncelleyen kod .
       productPathTitle.textContent = "";
       productWrapper.innerHTML = `
@@ -113,8 +110,6 @@ for (const btn of btns) {
 // Dataları ekrana yazdıran fonksiyon
 
 const displayData = (data) => {
-  const menuList = document.querySelector(".menu-list");
-
   menuList.innerHTML = "";
   for (const item of data) {
     const itemDiv = createItem(
