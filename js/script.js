@@ -3,7 +3,6 @@
 const btns = document.querySelectorAll("button");
 const menuList = document.querySelector(".menu-list");
 const productWrapper = document.querySelector(".product-wrapper");
-const productPathTitle = document.querySelector(".path-title");
 
 // Apiden gelen datayı dışarıda kullanmak için tanımladığımız değişken
 
@@ -67,6 +66,8 @@ window.addEventListener("DOMContentLoaded", async function (e) {
       const id = params.get("id");
       displayProduct(id, data.menu);
     } catch (error) {
+      const productPathTitle = document.querySelector(".path-title");
+
       // herhangi bir error durumunda sayfanın contentini güncelleyen kod .
       productPathTitle.textContent = "";
       productWrapper.innerHTML = `
