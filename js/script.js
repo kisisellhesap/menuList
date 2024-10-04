@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", async function (e) {
       displayProduct(id, data.menu);
     } catch (error) {
       // herhangi bir error durumunda sayfanın contentini güncelleyen kod .
-      productPathTitle.textContent = "";
+      // productPathTitle.textContent = "";
       productWrapper.innerHTML = `
           <img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
       // Error durumunda sayfanın title'ını değiştiren kod.
