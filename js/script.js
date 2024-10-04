@@ -51,12 +51,12 @@ window.addEventListener("DOMContentLoaded", async function (e) {
 
   // eğer sayfa index.html de ise if bloğu, değilse else bloğu çalışacak.
 
-  if (pathname == "/index.html") {
+  if (pathname == "index.html") {
     // tüm dataları ekrana yazdıran fonksiyon
     setTimeout(() => {}, 1000);
     displayData(data.menu);
 
-    menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
+    // menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
   } else {
     // eğer sayfa index.html değilse id parametresi ile ürünü ekrana yazdıran fonksiyon. Tabi burada da try catch kullanarak data içindeki menulere ait idlerin dışında bir id girilirse diye kontrol sağlıyoruz.
 
