@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", async function (e) {
 
   // eğer sayfa index.html de ise if bloğu, değilse else bloğu çalışacak.
 
-  if (pathname == "index.html") {
+  if (pathname == "/index.html") {
     // tüm dataları ekrana yazdıran fonksiyon
     setTimeout(() => {}, 1000);
     displayData(data.menu);
