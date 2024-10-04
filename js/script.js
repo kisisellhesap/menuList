@@ -68,12 +68,12 @@ window.addEventListener("DOMContentLoaded", async function (e) {
     } catch (error) {
       // herhangi bir error durumunda sayfanın contentini güncelleyen kod .
       // productPathTitle.textContent = "";
-      productWrapper.innerHTML = `
-          <img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
-      // Error durumunda sayfanın title'ını değiştiren kod.
-      const title = `404- Not Found`;
-      document.title = title;
-      console.log(error, "bir şeyler ters gitti ..");
+      // productWrapper.innerHTML = `
+      //     <img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
+      // // Error durumunda sayfanın title'ını değiştiren kod.
+      // const title = `404- Not Found`;
+      // document.title = title;
+      // console.log(error, "bir şeyler ters gitti ..");
     }
   }
 });
