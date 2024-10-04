@@ -53,9 +53,8 @@ window.addEventListener("DOMContentLoaded", async function (e) {
 
   if (pathname == "/index.html") {
     // tüm dataları ekrana yazdıran fonksiyon
-    setTimeout(() => {
-      displayData(data.menu);
-    }, 1000);
+    setTimeout(() => {}, 1000);
+    displayData(data.menu);
 
     menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
   } else {
