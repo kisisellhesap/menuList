@@ -48,15 +48,17 @@ window.addEventListener("DOMContentLoaded", async function (e) {
   // e.target.location.pathname ile sayfanın hangi sayfada olduğunu öğreniyoruz.
 
   const pathname = e.target.location.pathname;
-
+  console.log(pathname);
   // eğer sayfa index.html de ise if bloğu, değilse else bloğu çalışacak.
 
   if (pathname == "/index.html") {
     // tüm dataları ekrana yazdıran fonksiyon
-    setTimeout(() => {}, 1000);
-    displayData(data.menu);
 
-    // menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
+    setTimeout(() => {
+      displayData(data.menu);
+    }, 1000);
+
+    menuList.innerHTML = `<i class="fa-solid fa-spinner" id="spinner"></i>`;
   } else {
     // eğer sayfa index.html değilse id parametresi ile ürünü ekrana yazdıran fonksiyon. Tabi burada da try catch kullanarak data içindeki menulere ait idlerin dışında bir id girilirse diye kontrol sağlıyoruz.
 
@@ -66,13 +68,13 @@ window.addEventListener("DOMContentLoaded", async function (e) {
       displayProduct(id, data.menu);
     } catch (error) {
       // herhangi bir error durumunda sayfanın contentini güncelleyen kod .
-      // productPathTitle.textContent = "";
-      // productWrapper.innerHTML = `
-      //     <img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
-      // // Error durumunda sayfanın title'ını değiştiren kod.
-      // const title = `404- Not Found`;
-      // document.title = title;
-      // console.log(error, "bir şeyler ters gitti ..");
+      productPathTitle.textContent = "";
+      productWrapper.innerHTML = `
+          <img src="./images/notfound.jpg" alt="not-found" class="not-found"/>`;
+      // Error durumunda sayfanın title'ını değiştiren kod.
+      const title = `404- Not Found`;
+      document.title = title;
+      console.log(error, "bir şeyler ters gitti ..");
     }
   }
 });
