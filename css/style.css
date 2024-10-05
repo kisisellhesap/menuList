@@ -162,9 +162,15 @@ header button {
 }
 
 .product-cat-name,
-.product-price-name {
+.product-price-name,
+.item-price {
   color: green;
   font-weight: 700;
+}
+
+.product-price-name,
+.item-price {
+  font-size: 1.3rem;
 }
 
 .product-description {
